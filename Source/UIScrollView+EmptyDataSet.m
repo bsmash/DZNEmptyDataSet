@@ -919,6 +919,7 @@ Class dzn_baseClassToSwizzleForTarget(id target)
 
 - (void)setupConstraints
 {
+    return;
     // First, configure the content view constaints
     // The content view must alway be centered to its superview
     NSLayoutConstraint *centerXConstraint = [self equallyRelatedConstraintWithView:self.contentView attribute:NSLayoutAttributeCenterX];
