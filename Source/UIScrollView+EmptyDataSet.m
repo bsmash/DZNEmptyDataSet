@@ -718,6 +718,11 @@ Class dzn_baseClassToSwizzleForTarget(id target)
     CGRect superviewBounds = self.superview.bounds;
     self.frame = CGRectMake(0.0, 0.0, CGRectGetWidth(superviewBounds), CGRectGetHeight(superviewBounds));
 
+    if (_contentView) {
+        [self.superview bringSubviewToFront:self];
+        [self bringSubviewToFront:self.contentView];
+    }
+
     void(^fadeInBlock)(void) = ^{_contentView.alpha = 1.0;};
 
     if (self.fadeInOnDisplay) {
